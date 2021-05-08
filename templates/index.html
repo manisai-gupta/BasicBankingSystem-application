@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-5" style="padding-top: 2px;">
+  <table class="table">
+    <thead>
+      <h2>Customer Details</h2>
+      <tr style="border: 2px solid black;">
+        <th scope="col">SNo</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">TRANSACTION-ID</th>
+        <th scope="col">CURRENT BALANCE</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for details in allcustomer %}
+      <tr style="border: 2px solid black;">
+        <th scope="row">{{loop.index}}</th>
+        <td><b>{{details["name"]}}</b></td>
+        <td><b>{{details["email"]}}</b></td>
+        <td><b>{{details["transactionid"]}}</b></td>
+        <td><b>{{details["current"]}}</b></td>
+        <td>
+
+          <a href="/view/{{details['sno']}}" type="button" class="btn btn-success btn-sm mx-2">VIEW </button>
+          <a href="/history/{{details['sno']}}" type="button" class="btn btn-success btn-sm mx-2">TRANSFER_HISTORY </button>
+        </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endblock body %}

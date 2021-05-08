@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<dv >
+  <div class="container my-5" style="padding-top: -1px;" >
+    <form action="/inputinfo/" method="POST" >
+      <div class="mb-3 my-5">
+        <label for="yourtransactionid" class="form-label">
+          <h4> Your Transactionid</h4>
+        </label>
+        <input type="number" class="form-control" name="ytid" value={{tid}}  readonly="readonly" id="yourtransactionid" >
+      </div>
+      <div class="mb-3 my-5">
+        <label for="transactionid" class="form-label">
+          <h4>Other's Transactionid</h4>
+        </label>
+        <input type="number" class="form-control" name="tid" id="transactionid" >
+      </div>
+      <div class="mb-3">
+        <label for="Amount" class="form-label">
+          <h4>Amount</h4>
+        </label>
+        <input type="number" class="form-control" name="Am" id="Amount" >
+      </div>
+      <button type="submit" value="submit" class="btn btn-primary">Transfer</button>
+    </form>
+  </div>
+
+</div>
+{% endblock body %}
